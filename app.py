@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 
 
 st.write("""
@@ -11,27 +10,4 @@ This app find largest among 3 given numbers (value greater than the other two)
 
 st.header('Enter Three Numbers')
 
-def user_input_features():
-    
-    number_1 = st.number_input("CNT_CHILDREN")
-    number_2 = st.number_input("AMT_INCOME_TOTAL")
-    number_3 = st.number_input("DAYS_BIRTH")
-    
 
-    data = {'NUMBER_1': number_1,
-            'NUMBER_2': number_2,
-            'NUMBER_3': number_3
-            }
-    features = pd.DataFrame(data, index=[0])
-    return features
-
-df = user_input_features()
-
-st.subheader('User Input parameters')
-st.write(df.to_dict())
-
-
-
-largest=df.max()
-st.subheader('Largest Number')
-st.write(largest)
